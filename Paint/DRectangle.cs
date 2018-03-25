@@ -4,19 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace Paint
 {
-    class DRectangle :  DrawingShape
+    class DRectangle : DrawingShape
     {
-        public override void Draw(Graphics myGp, Pen myPen)
+        public override void DrawShape(Graphics Gp)
         {
-            myGp.DrawPolygon(myPen, new Point[] { p1, new Point(p1.X, p2.Y), p2, new Point(p2.X, p1.Y) });
+            controlPanel = new Rectangle(
+                Math.Min(p1.X, p2.X),
+                Math.Min(p1.Y, p2.Y),
+                Math.Abs(p1.X - p2.X),
+                Math.Abs(p1.Y - p2.Y)
+                );
+            GraphicsPath grp = new GraphicsPath();
+            grp.AddRectangle(controlPanel);
+            region = new Region(grp);
+            base.DrawShape(Gp);
+        }
+        public override void DrawFill(Graphics Gp)
+        {
+            Gp.FillRectangle(this.PenDraw.Brush, controlPanel);
         }
 
-        public override void Fill(Graphics myGp, Brush br)
+        public override void DrawNoFill(Graphics Gp)
         {
-            myGp.FillPolygon(br, new Point[] { p1, new Point(p1.X, p2.Y), p2, new Point(p2.X, p1.Y) });
+            Gp.DrawRectangle(this.PenDraw, controlPanel);
         }
+
     }
 }

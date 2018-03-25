@@ -10,54 +10,33 @@ namespace Paint
 {
     class DEllipse : DrawingShape
     {
-        public DEllipse()
-        {
-        }
 
-        public override void Draw(Graphics myGp, Pen myPen)
+        public override void DrawShape(Graphics Gp)
         {
-            controlPanel = new Rectangle
-           (
-                Math.Min(p1.X, p2.X),
-                Math.Min(p1.Y, p2.Y),
-                Math.Abs(p1.X - p2.X),
-                Math.Abs(p2.Y - p1.Y)
-            );
-            CreatControlPoint();
+            controlPanel = new Rectangle(
+                 Math.Min(p1.X, p2.X),
+                 Math.Min(p1.Y, p2.Y),
+                 Math.Abs(p1.X - p2.X),
+                 Math.Abs(p1.Y - p2.Y)
+                 );
             GraphicsPath grp = new GraphicsPath();
             grp.AddEllipse(controlPanel);
             region = new Region(grp);
 
-            myGp.DrawEllipse(myPen, controlPanel);
+            base.DrawShape(Gp);
+        }
+        public override void DrawFill(Graphics Gp)
+        {
+            Gp.FillEllipse(PenDraw.Brush, controlPanel);
         }
 
-        public override void Fill(Graphics myGp, Brush br)
+        public override void DrawNoFill(Graphics Gp)
         {
-          controlPanel = new Rectangle
-          (
-               Math.Min(p1.X, p2.X),
-               Math.Min(p1.Y, p2.Y),
-               Math.Abs(p1.X - p2.X),
-               Math.Abs(p2.Y - p1.Y)
-           );
-            CreatControlPoint();
-
             GraphicsPath grp = new GraphicsPath();
             grp.AddEllipse(controlPanel);
             region = new Region(grp);
 
-            myGp.FillEllipse(br, this.p1.X, this.p1.Y, this.p2.X - this.p1.X, this.p2.Y - this.p1.Y);
-        }
-        private void CreatControlPoint()
-        {
-            controlPoint.Add(new Point(controlPanel.Location.X, controlPanel.Location.Y));
-            controlPoint.Add(new Point(controlPanel.X + controlPanel.Width / 2, controlPanel.Y));
-            controlPoint.Add(new Point(controlPanel.X + controlPanel.Width, controlPanel.Y));
-            controlPoint.Add(new Point(controlPanel.X + controlPanel.Width, controlPanel.Y + controlPanel.Height / 2));
-            controlPoint.Add(new Point(controlPanel.X + controlPanel.Width, controlPanel.Y + controlPanel.Height));
-            controlPoint.Add(new Point(controlPanel.X + controlPanel.Width / 2, controlPanel.Y + controlPanel.Height));
-            controlPoint.Add(new Point(controlPanel.X, controlPanel.Y + controlPanel.Height));
-            controlPoint.Add(new Point(controlPanel.X, controlPanel.Y + controlPanel.Height / 2));
+            Gp.DrawEllipse(PenDraw, controlPanel);
         }
     }
 }

@@ -1,31 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 
 namespace Paint
 {
-    class DLine :DrawingShape
+    class DBezier:DrawingShape
     {
         public override void DrawShape(Graphics Gp)
         {
-            controlPanel = new Rectangle(
-                 Math.Min(p1.X, p2.X),
-                 Math.Min(p1.Y, p2.Y),
-                 Math.Abs(p1.X - p2.X),
-                 Math.Abs(p1.Y - p2.Y)
-                 );
+
             GraphicsPath grp = new GraphicsPath();
-            grp.AddRectangle(controlPanel);
+            grp.AddBezier(p1, new Point((p1.X + p2.X) / 4, (p1.Y + p2.Y) / 4 + 50), new Point((p1.X + p2.X) * 3 / 4, (p1.Y + p2.Y) * 3 / 5 - 50), p2);
             region = new Region(grp);
             base.DrawShape(Gp);
         }
         public override void DrawNoFill(Graphics Gp)
         {
-            Gp.DrawLine(PenDraw, this.p1, this.p2);
+            Gp.DrawBezier(PenDraw, p1, new Point((p1.X+p2.X)/4, (p1.Y + p2.Y) / 4 + 50), new Point((p1.X + p2.X) *3 / 4 , (p1.Y + p2.Y) *3/ 5 - 50), p2);
         }
 
         public override void DrawFill(Graphics Gp)

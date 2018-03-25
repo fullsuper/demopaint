@@ -10,41 +10,47 @@ namespace Paint
     abstract class DrawingShape
     {
         protected Region region = new Region();
-        protected List<Point> controlPoint = new List<Point>();
         public Point p1, p2;
         public Rectangle controlPanel;
-
+        public bool isFill = false;
+        public Pen PenDraw = new Pen(Color.Black, 1);
         public virtual bool isSelected(Point p)
         {
-            //for (int i = 0; i < controlPoint.Count; i++)
-            //{
-            //    if (controlPoint[i].X == p.X && controlPoint[i].Y == p.Y)
-            //        return false;
-            //}
             if (region.IsVisible(p))
                 return true;
             return false;
         }
-        public virtual void MoveShape(Point a, Point b)
+        public virtual bool isSelected(Rectangle p)
         {
-            int dx = b.X - a.X;
-            int dy = b.Y - a.Y;
-            for (int i = 0; i < controlPoint.Count(); i++)
-            {
-                controlPoint[i] = new Point(controlPoint[i].X + dx, controlPoint[i].Y + dy);
-            }
+            if (region.IsVisible(p))
+                return true;
+            return false;
         }
-        public virtual void DrawControlPanel(Graphics g)
+        public virtual void MoveShape(int dX, int dY)
         {
-            SolidBrush sb = new SolidBrush(Color.Red);
-            //Pen pen = new Pen(Color.Blue);
-            for (int i = 0; i < controlPoint.Count(); i++)
-            {
-                g.FillRectangle(sb, controlPoint[i].X - 4, controlPoint[i].Y - 4, 8, 8);
-            }
+            p1.X += dX;
+            p1.Y += dY;
+            p2.X += dX;
+            p2.Y += dY;
         }
-
-        public abstract void Draw(Graphics myGp, Pen myPen);
-        public abstract void Fill(Graphics myGp, Brush br);
+        public virtual void DrawShape(Graphics Gp, Pen PenDraw, bool isFill)
+        {
+            this.isFill = isFill;
+            this.PenDraw = new Pen(PenDraw.Brush, PenDraw.Width)
+            {
+                Width = PenDraw.Width,
+                DashStyle = PenDraw.DashStyle
+            };
+            DrawShape(Gp);
+        }
+        public virtual void DrawShape(Graphics Gp)
+        {
+            if (this.isFill)
+                DrawFill(Gp);
+            else
+                DrawNoFill(Gp);
+        }
+        public abstract void DrawNoFill(Graphics Gp);
+        public abstract void DrawFill(Graphics Gp);
     }
 }
