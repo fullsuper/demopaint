@@ -49,6 +49,7 @@
     <Compile Include="DCircle.cs" />
     <Compile Include="DEllipse.cs" />
     <Compile Include="DLine.cs" />
+    <Compile Include="DPolygon.cs" />
     <Compile Include="DrawingShape.cs" />
     <Compile Include="DSquare.cs" />
     <Compile Include="Form1.cs">
@@ -92,6 +93,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Image\Bulletpoint_Bullet_Listicon_Shape_Bulletfont_Glyph_Typography_Bullet_Point_Customshape_Wingding_Custom_Smooth_Square_Double_Fill-512.png" />
+    <None Include="Image\group.png" />
+    <None Include="Image\eraser-512.png" />
+    <None Include="Image\delete.png" />
+    <None Include="Image\move_3-512.png" />
     <None Include="Image\bezier.png" />
     <None Include="Image\ellipse.png" />
     <None Include="Image\line-icon-61713.png" />

@@ -15,6 +15,7 @@ namespace Paint
             Square,
             Line,
             Bezier,
+            Polygon,
             Fill,
             Move,
             Group,
@@ -25,12 +26,12 @@ namespace Paint
         Pen myPen = new Pen(Brushes.Black);
         List<DrawingShape> lstObject = new List<DrawingShape>();
         DrawingShape myObj;
-        Mode mode;
+        Mode mode = Mode.Circle;
         Graphics gp;
         List<int> Group;
         bool Locker;
         int indexSelected= -1;
-        
+        int vertices = 5;
         Point startPoint, endPoint;
         bool isPress = false;
         bool isFill = false;
@@ -75,6 +76,7 @@ namespace Paint
                     case Mode.Recangle: myObj = new DRectangle();   break;
                     case Mode.Square:   myObj = new DSquare();      break;
                     case Mode.Bezier:   myObj = new DBezier();      break;
+                    case Mode.Polygon:  myObj = new DPolygon(vertices);     break;
                 }
                 myObj.PenDraw.DashStyle = myPen.DashStyle;
                 myObj.p1 = e.Location;
@@ -143,7 +145,6 @@ namespace Paint
                     if (mode == Mode.Group)
                     {   //tạo khung group
                         target.p2 = e.Location;
-
                         tempbitmap = (Bitmap)mainbitmap.Clone();
                         Graphics g = Graphics.FromImage(tempbitmap);
                         target.DrawShape(g);
@@ -398,6 +399,40 @@ namespace Paint
                 case 1: myPen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot; break;
                 case 2: myPen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot; break;
             }
+        }
+
+        private void btnPolygon_Click(object sender, EventArgs e)
+        {
+            mode = Mode.Polygon;
+            Locker = false;
+            lblVertices.Visible = true;
+            txtVertices.Visible = true;
+            txtVertices.Enabled = true;
+            txtVertices.Focus();
+        }
+
+        private void txtVertices_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                vertices = Int16.Parse(txtVertices.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Mời nhập đúng số đỉnh!");
+            }
+        }
+
+        private void txtVertices_Leave(object sender, EventArgs e)
+        {
+            txtVertices.Enabled = false;
+            txtVertices.Visible = false;
+            lblVertices.Visible = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)

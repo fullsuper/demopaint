@@ -13,7 +13,7 @@ namespace Paint
         public Painting():base()
         {
             DoubleBuffered = true;
-            Size = new System.Drawing.Size(800, 350);
+            Size = new System.Drawing.Size(940, 420);
             Location = new System.Drawing.Point(10, 135);
             BackColor = Color.White;
         }

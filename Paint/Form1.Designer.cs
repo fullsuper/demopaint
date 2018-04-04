@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnClearAll = new System.Windows.Forms.Button();
-            this.btnCircle = new System.Windows.Forms.Button();
-            this.btnEllipse = new System.Windows.Forms.Button();
-            this.btnSquare = new System.Windows.Forms.Button();
-            this.btnRec = new System.Windows.Forms.Button();
-            this.btnLine = new System.Windows.Forms.Button();
-            this.btnBezier = new System.Windows.Forms.Button();
-            this.btnGroup = new System.Windows.Forms.Button();
-            this.btnMove = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -52,126 +42,26 @@
             this.button28 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.cbbDashStyle = new System.Windows.Forms.ComboBox();
             this.nmrPenWitch = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtVertices = new System.Windows.Forms.TextBox();
+            this.lblVertices = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnMove = new System.Windows.Forms.Button();
+            this.btnBezier = new System.Windows.Forms.Button();
+            this.btnSquare = new System.Windows.Forms.Button();
+            this.btnEllipse = new System.Windows.Forms.Button();
+            this.btnGroup = new System.Windows.Forms.Button();
+            this.btnPolygon = new System.Windows.Forms.Button();
+            this.btnLine = new System.Windows.Forms.Button();
+            this.btnRec = new System.Windows.Forms.Button();
+            this.btnCircle = new System.Windows.Forms.Button();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrPenWitch)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(415, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 55);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Fill";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnClearAll
-            // 
-            this.btnClearAll.Location = new System.Drawing.Point(467, 13);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(110, 55);
-            this.btnClearAll.TabIndex = 1;
-            this.btnClearAll.Text = "Xóa tất cả";
-            this.btnClearAll.UseVisualStyleBackColor = true;
-            this.btnClearAll.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnCircle
-            // 
-            this.btnCircle.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCircle.BackgroundImage = global::Paint.Properties.Resources.US_I_Corps_svg;
-            this.btnCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCircle.Location = new System.Drawing.Point(232, 12);
-            this.btnCircle.Name = "btnCircle";
-            this.btnCircle.Size = new System.Drawing.Size(55, 55);
-            this.btnCircle.TabIndex = 6;
-            this.btnCircle.UseVisualStyleBackColor = false;
-            this.btnCircle.Click += new System.EventHandler(this.btnCircle_Click);
-            // 
-            // btnEllipse
-            // 
-            this.btnEllipse.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnEllipse.BackgroundImage = global::Paint.Properties.Resources.ellipse;
-            this.btnEllipse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEllipse.Location = new System.Drawing.Point(232, 62);
-            this.btnEllipse.Name = "btnEllipse";
-            this.btnEllipse.Size = new System.Drawing.Size(55, 55);
-            this.btnEllipse.TabIndex = 6;
-            this.btnEllipse.UseVisualStyleBackColor = false;
-            this.btnEllipse.Click += new System.EventHandler(this.btnEllipse_Click);
-            // 
-            // btnSquare
-            // 
-            this.btnSquare.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSquare.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSquare.BackgroundImage")));
-            this.btnSquare.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSquare.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSquare.Location = new System.Drawing.Point(283, 62);
-            this.btnSquare.Name = "btnSquare";
-            this.btnSquare.Size = new System.Drawing.Size(55, 55);
-            this.btnSquare.TabIndex = 6;
-            this.btnSquare.UseVisualStyleBackColor = false;
-            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
-            // 
-            // btnRec
-            // 
-            this.btnRec.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnRec.BackgroundImage = global::Paint.Properties.Resources.rectangle;
-            this.btnRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRec.Location = new System.Drawing.Point(283, 12);
-            this.btnRec.Name = "btnRec";
-            this.btnRec.Size = new System.Drawing.Size(55, 55);
-            this.btnRec.TabIndex = 6;
-            this.btnRec.UseVisualStyleBackColor = false;
-            this.btnRec.Click += new System.EventHandler(this.btnRec_Click);
-            // 
-            // btnLine
-            // 
-            this.btnLine.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnLine.BackgroundImage = global::Paint.Properties.Resources.line_icon_61713;
-            this.btnLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLine.Location = new System.Drawing.Point(334, 12);
-            this.btnLine.Name = "btnLine";
-            this.btnLine.Size = new System.Drawing.Size(55, 55);
-            this.btnLine.TabIndex = 6;
-            this.btnLine.UseVisualStyleBackColor = false;
-            this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
-            // 
-            // btnBezier
-            // 
-            this.btnBezier.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnBezier.BackgroundImage = global::Paint.Properties.Resources.bezier;
-            this.btnBezier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBezier.Location = new System.Drawing.Point(334, 62);
-            this.btnBezier.Name = "btnBezier";
-            this.btnBezier.Size = new System.Drawing.Size(55, 55);
-            this.btnBezier.TabIndex = 6;
-            this.btnBezier.UseVisualStyleBackColor = false;
-            this.btnBezier.Click += new System.EventHandler(this.btnBezier_Click);
-            // 
-            // btnGroup
-            // 
-            this.btnGroup.Location = new System.Drawing.Point(521, 65);
-            this.btnGroup.Name = "btnGroup";
-            this.btnGroup.Size = new System.Drawing.Size(110, 55);
-            this.btnGroup.TabIndex = 6;
-            this.btnGroup.Text = "Nhóm";
-            this.btnGroup.UseVisualStyleBackColor = true;
-            this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
-            // 
-            // btnMove
-            // 
-            this.btnMove.Location = new System.Drawing.Point(415, 65);
-            this.btnMove.Name = "btnMove";
-            this.btnMove.Size = new System.Drawing.Size(55, 55);
-            this.btnMove.TabIndex = 6;
-            this.btnMove.Text = "Đi";
-            this.btnMove.UseVisualStyleBackColor = true;
-            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // button8
             // 
@@ -344,7 +234,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.BurlyWood;
+            this.groupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.groupBox1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.groupBox1.Controls.Add(this.button24);
             this.groupBox1.Controls.Add(this.button29);
             this.groupBox1.Controls.Add(this.button8);
@@ -358,40 +249,39 @@
             this.groupBox1.Controls.Add(this.button26);
             this.groupBox1.Controls.Add(this.button12);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(9, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.groupBox1.Location = new System.Drawing.Point(40, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(207, 100);
+            this.groupBox1.Size = new System.Drawing.Size(207, 108);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "    Màu sắc    ";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(468, 65);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(55, 55);
-            this.btnClear.TabIndex = 6;
-            this.btnClear.Text = "Xóa";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.groupBox1.Text = "Màu sắc";
             // 
             // cbbDashStyle
             // 
+            this.cbbDashStyle.BackColor = System.Drawing.Color.Wheat;
+            this.cbbDashStyle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbDashStyle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbDashStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDashStyle.FormattingEnabled = true;
+            this.cbbDashStyle.ItemHeight = 22;
             this.cbbDashStyle.Items.AddRange(new object[] {
-            "Liền",
-            "Nét đứt",
-            "Đứt chấm chấm"});
-            this.cbbDashStyle.Location = new System.Drawing.Point(661, 25);
+            "____________",
+            "_ _ _ _ _ _ _ _",
+            "_ . _ . _ . _ . _"});
+            this.cbbDashStyle.Location = new System.Drawing.Point(800, 26);
             this.cbbDashStyle.Name = "cbbDashStyle";
-            this.cbbDashStyle.Size = new System.Drawing.Size(121, 32);
+            this.cbbDashStyle.Size = new System.Drawing.Size(112, 30);
             this.cbbDashStyle.TabIndex = 8;
+            this.cbbDashStyle.Text = "Nét bút";
             this.cbbDashStyle.SelectedIndexChanged += new System.EventHandler(this.cbbDashStyle_SelectedIndexChanged);
             // 
             // nmrPenWitch
             // 
-            this.nmrPenWitch.Location = new System.Drawing.Point(661, 88);
+            this.nmrPenWitch.BackColor = System.Drawing.Color.Wheat;
+            this.nmrPenWitch.Location = new System.Drawing.Point(800, 91);
             this.nmrPenWitch.Maximum = new decimal(new int[] {
             50,
             0,
@@ -403,8 +293,9 @@
             0,
             0});
             this.nmrPenWitch.Name = "nmrPenWitch";
-            this.nmrPenWitch.Size = new System.Drawing.Size(50, 29);
+            this.nmrPenWitch.Size = new System.Drawing.Size(112, 29);
             this.nmrPenWitch.TabIndex = 9;
+            this.nmrPenWitch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nmrPenWitch.Value = new decimal(new int[] {
             1,
             0,
@@ -415,18 +306,186 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(657, 61);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(817, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 24);
+            this.label1.Size = new System.Drawing.Size(66, 22);
             this.label1.TabIndex = 10;
             this.label1.Text = "Độ dày";
+            // 
+            // txtVertices
+            // 
+            this.txtVertices.Location = new System.Drawing.Point(531, 61);
+            this.txtVertices.Name = "txtVertices";
+            this.txtVertices.Size = new System.Drawing.Size(35, 29);
+            this.txtVertices.TabIndex = 11;
+            this.txtVertices.Visible = false;
+            this.txtVertices.TextChanged += new System.EventHandler(this.txtVertices_TextChanged);
+            this.txtVertices.Leave += new System.EventHandler(this.txtVertices_Leave);
+            // 
+            // lblVertices
+            // 
+            this.lblVertices.AutoSize = true;
+            this.lblVertices.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVertices.Location = new System.Drawing.Point(514, 38);
+            this.lblVertices.Name = "lblVertices";
+            this.lblVertices.Size = new System.Drawing.Size(63, 19);
+            this.lblVertices.TabIndex = 12;
+            this.lblVertices.Text = "Số cạnh";
+            this.lblVertices.Visible = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BackgroundImage = global::Paint.Properties.Resources.eraser_512;
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClear.Location = new System.Drawing.Point(661, 65);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(55, 55);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnMove
+            // 
+            this.btnMove.BackColor = System.Drawing.Color.Transparent;
+            this.btnMove.BackgroundImage = global::Paint.Properties.Resources.move_3_512;
+            this.btnMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMove.Location = new System.Drawing.Point(607, 65);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.Size = new System.Drawing.Size(55, 55);
+            this.btnMove.TabIndex = 6;
+            this.btnMove.UseVisualStyleBackColor = false;
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
+            // 
+            // btnBezier
+            // 
+            this.btnBezier.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBezier.BackgroundImage = global::Paint.Properties.Resources.bezier;
+            this.btnBezier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBezier.Location = new System.Drawing.Point(421, 66);
+            this.btnBezier.Name = "btnBezier";
+            this.btnBezier.Size = new System.Drawing.Size(55, 55);
+            this.btnBezier.TabIndex = 6;
+            this.btnBezier.UseVisualStyleBackColor = false;
+            this.btnBezier.Click += new System.EventHandler(this.btnBezier_Click);
+            // 
+            // btnSquare
+            // 
+            this.btnSquare.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSquare.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSquare.BackgroundImage")));
+            this.btnSquare.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSquare.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSquare.Location = new System.Drawing.Point(367, 66);
+            this.btnSquare.Name = "btnSquare";
+            this.btnSquare.Size = new System.Drawing.Size(55, 55);
+            this.btnSquare.TabIndex = 6;
+            this.btnSquare.UseVisualStyleBackColor = false;
+            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
+            // 
+            // btnEllipse
+            // 
+            this.btnEllipse.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnEllipse.BackgroundImage = global::Paint.Properties.Resources.ellipse;
+            this.btnEllipse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEllipse.Location = new System.Drawing.Point(313, 66);
+            this.btnEllipse.Name = "btnEllipse";
+            this.btnEllipse.Size = new System.Drawing.Size(55, 55);
+            this.btnEllipse.TabIndex = 6;
+            this.btnEllipse.UseVisualStyleBackColor = false;
+            this.btnEllipse.Click += new System.EventHandler(this.btnEllipse_Click);
+            // 
+            // btnGroup
+            // 
+            this.btnGroup.BackColor = System.Drawing.Color.Transparent;
+            this.btnGroup.BackgroundImage = global::Paint.Properties.Resources.group;
+            this.btnGroup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGroup.Location = new System.Drawing.Point(714, 65);
+            this.btnGroup.Name = "btnGroup";
+            this.btnGroup.Size = new System.Drawing.Size(55, 55);
+            this.btnGroup.TabIndex = 6;
+            this.btnGroup.UseVisualStyleBackColor = false;
+            this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
+            // 
+            // btnPolygon
+            // 
+            this.btnPolygon.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPolygon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPolygon.BackgroundImage")));
+            this.btnPolygon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPolygon.Location = new System.Drawing.Point(447, 12);
+            this.btnPolygon.Name = "btnPolygon";
+            this.btnPolygon.Size = new System.Drawing.Size(55, 55);
+            this.btnPolygon.TabIndex = 6;
+            this.btnPolygon.UseVisualStyleBackColor = false;
+            this.btnPolygon.Click += new System.EventHandler(this.btnPolygon_Click);
+            // 
+            // btnLine
+            // 
+            this.btnLine.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnLine.BackgroundImage = global::Paint.Properties.Resources.line_icon_61713;
+            this.btnLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLine.Location = new System.Drawing.Point(393, 12);
+            this.btnLine.Name = "btnLine";
+            this.btnLine.Size = new System.Drawing.Size(55, 55);
+            this.btnLine.TabIndex = 6;
+            this.btnLine.UseVisualStyleBackColor = false;
+            this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
+            // 
+            // btnRec
+            // 
+            this.btnRec.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRec.BackgroundImage = global::Paint.Properties.Resources.rectangle;
+            this.btnRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRec.Location = new System.Drawing.Point(339, 12);
+            this.btnRec.Name = "btnRec";
+            this.btnRec.Size = new System.Drawing.Size(55, 55);
+            this.btnRec.TabIndex = 6;
+            this.btnRec.UseVisualStyleBackColor = false;
+            this.btnRec.Click += new System.EventHandler(this.btnRec_Click);
+            // 
+            // btnCircle
+            // 
+            this.btnCircle.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCircle.BackgroundImage = global::Paint.Properties.Resources.US_I_Corps_svg;
+            this.btnCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCircle.Location = new System.Drawing.Point(285, 12);
+            this.btnCircle.Name = "btnCircle";
+            this.btnCircle.Size = new System.Drawing.Size(55, 55);
+            this.btnCircle.TabIndex = 6;
+            this.btnCircle.UseVisualStyleBackColor = false;
+            this.btnCircle.Click += new System.EventHandler(this.btnCircle_Click);
+            // 
+            // btnClearAll
+            // 
+            this.btnClearAll.BackgroundImage = global::Paint.Properties.Resources.delete;
+            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClearAll.Location = new System.Drawing.Point(684, 13);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(55, 55);
+            this.btnClearAll.TabIndex = 1;
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(630, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 55);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(962, 502);
+            this.BackColor = System.Drawing.Color.Khaki;
+            this.ClientSize = new System.Drawing.Size(962, 561);
+            this.Controls.Add(this.lblVertices);
+            this.Controls.Add(this.txtVertices);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nmrPenWitch);
             this.Controls.Add(this.cbbDashStyle);
@@ -437,6 +496,7 @@
             this.Controls.Add(this.btnSquare);
             this.Controls.Add(this.btnEllipse);
             this.Controls.Add(this.btnGroup);
+            this.Controls.Add(this.btnPolygon);
             this.Controls.Add(this.btnLine);
             this.Controls.Add(this.btnRec);
             this.Controls.Add(this.btnCircle);
@@ -445,7 +505,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmrPenWitch)).EndInit();
             this.ResumeLayout(false);
@@ -481,6 +543,9 @@
         private System.Windows.Forms.ComboBox cbbDashStyle;
         private System.Windows.Forms.NumericUpDown nmrPenWitch;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPolygon;
+        private System.Windows.Forms.TextBox txtVertices;
+        private System.Windows.Forms.Label lblVertices;
     }
 }
 

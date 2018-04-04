@@ -20,7 +20,7 @@ namespace Paint
         }
         public override void DrawNoFill(Graphics Gp)
         {
-            Gp.DrawBezier(PenDraw, p1, new Point((p1.X+p2.X)/4, (p1.Y + p2.Y) / 4 + 50), new Point((p1.X + p2.X) *3 / 4 , (p1.Y + p2.Y) *3/ 5 - 50), p2);
+            Gp.DrawBezier(PenDraw, p1, new Point((p1.X+p2.X)/4, (p1.Y + p2.Y) / 4 + 100), new Point((p1.X + p2.X) *3 / 4 , (p1.Y + p2.Y) *3/ 5 - 100), p2);
         }
 
         public override void DrawFill(Graphics Gp)
